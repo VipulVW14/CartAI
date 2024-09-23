@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineDelete } from 'react-icons/ai';
 
 const CartItem = ({ item, onAdd, onRemove, onDelete }) => {
   return (
@@ -27,8 +28,9 @@ const CartItem = ({ item, onAdd, onRemove, onDelete }) => {
         onClick={() => onDelete(item)} 
         className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-4"
       >
-        Remove
+        <AiOutlineDelete/>
       </button>
+      
     </div>
   );
 };

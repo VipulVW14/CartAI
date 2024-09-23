@@ -17,7 +17,7 @@ const AIAssistant = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-4 mx-2 mb-2 md:m-4 md:py-60 md:min-h-[700px] text-center rounded-lg border-2">
+    <div className="bg-gray-100 p-4 mb-2 md:m-4 md:py-60 md:min-h-[700px] text-center rounded-lg border-2">
       <h2 className="text-2xl font-bold mb-5">AI Voice Assistant</h2>
       <button
         onClick={handleStart}

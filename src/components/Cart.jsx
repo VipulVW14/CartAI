@@ -70,7 +70,7 @@ const Cart = () => {
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="p-4 mx-2 md:p-4 md:m-4 bg-gray-100 md:min-h-[700px] rounded-lg border-2">
+    <div className="p-4 md:p-4 md:m-4 bg-gray-100 md:min-h-[700px] rounded-lg border-2">
       <h2 className="text-2xl font-semibold mb-6">Your Cart</h2>
       {items.length > 0 ? (
         <>
