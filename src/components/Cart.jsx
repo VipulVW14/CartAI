@@ -24,7 +24,7 @@ const Cart = () => {
      fetchCartItems();
 
      // Set up polling every 5 seconds
-     const intervalId = setInterval(fetchCartItems, 1000);
+     const intervalId = setInterval(fetchCartItems, 500);
 
      return () => {
       clearInterval(intervalId); // Clean up the interval on unmount
