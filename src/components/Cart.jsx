@@ -7,7 +7,7 @@ const vapi = new Vapi("28ff6416-7ee9-46a4-9ee9-dfd143722be3");
 
 const Cart = () => {
   const [items, setItems] = useState([]);
-  const apiUrl = 'http://ec2-3-87-247-114.compute-1.amazonaws.com:5000/api/cart';
+  const apiUrl = 'https://ba35792f-e489-47ea-8048-056691ae22e0-00-37oiiyqiwu46b.picard.replit.dev:5000/api/cart';
 
   useEffect(() => {
     // Fetch cart items on component mount
