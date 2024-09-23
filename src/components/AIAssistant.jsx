@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Vapi from "@vapi-ai/web";
 
-const vapi = new Vapi("28ff6416-7ee9-46a4-9ee9-dfd143722be3");
+const vapi = new Vapi("708057be-3439-4ca7-8fb2-1d27b7e2a13e");
 
 const AIAssistant = () => {
   const [isListening, setIsListening] = useState(false);
