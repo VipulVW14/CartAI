@@ -5,7 +5,7 @@ import Cart from './components/Cart';
 const App = () => {
   
   return (
-    <div className="sm:flex grid md:grid-cols-2 m-4">
+    <div className="grid grid-cols-2 m-4">
       <div className="">
         <AIAssistant />
       </div>
