@@ -6,7 +6,13 @@ import Vapi from "@vapi-ai/web";
 const vapi = new Vapi("28ff6416-7ee9-46a4-9ee9-dfd143722be3");
 
 const Cart = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState([{
+    "id": 2,
+    "name": "Cheese Burger",
+    "price": 7,
+    "quantity": 1,
+    "image": "https://i.postimg.cc/rp13fWmg/amirali-mirhashemian-sc5s-TPMr-Vfk-unsplash.jpg"
+  }]);
   const apiUrl = 'https://ba35792f-e489-47ea-8048-056691ae22e0-00-37oiiyqiwu46b.picard.replit.dev:5000/api/cart';
 
   useEffect(() => {
@@ -14,7 +20,7 @@ const Cart = () => {
     const fetchCartItems = async () => {
       try {
         const response = await axios.get(apiUrl);
-        setItems(response.data.items);
+        setItems(response?.data?.items);
       } catch (error) {
         console.error('Error fetching cart items:', error);
       }
