@@ -13,7 +13,7 @@ const Cart = () => {
     "quantity": 1,
     "image": "https://i.postimg.cc/rp13fWmg/amirali-mirhashemian-sc5s-TPMr-Vfk-unsplash.jpg"
   }]);
-  const apiUrl = 'http://3.87.247.114:5000/api/cart';
+  const apiUrl = 'http://ec2-3-87-247-114.compute-1.amazonaws.com:5000/api/cart';
 
   useEffect(() => {
     // Fetch cart items on component mount
