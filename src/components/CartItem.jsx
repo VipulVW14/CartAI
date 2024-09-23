@@ -26,7 +26,7 @@ const CartItem = ({ item, onAdd, onRemove, onDelete }) => {
       </div>
       <button 
         onClick={() => onDelete(item)} 
-        className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-4"
+        className="px-2 py-2 bg-red-500 text-white rounded hover:bg-red-600 ml-4"
       >
         <AiOutlineDelete/>
       </button>
