@@ -6,13 +6,7 @@ import Vapi from "@vapi-ai/web";
 const vapi = new Vapi("28ff6416-7ee9-46a4-9ee9-dfd143722be3");
 
 const Cart = () => {
-  const [items, setItems] = useState([{
-    "id": 2,
-    "name": "Cheese Burger",
-    "price": 7,
-    "quantity": 1,
-    "image": "https://i.postimg.cc/rp13fWmg/amirali-mirhashemian-sc5s-TPMr-Vfk-unsplash.jpg"
-  }]);
+  const [items, setItems] = useState([]);
   const apiUrl = 'http://ec2-3-87-247-114.compute-1.amazonaws.com:5000/api/cart';
 
   useEffect(() => {
