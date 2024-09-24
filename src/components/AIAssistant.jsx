@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Vapi from "@vapi-ai/web";
 
-const vapi = new Vapi("708057be-3439-4ca7-8fb2-1d27b7e2a13e");
+const vapi = new Vapi("35b355e3-f72e-40f5-bd4b-c34a5652eae7");
 
 const AIAssistant = () => {
   const [isListening, setIsListening] = useState(false);
 
   const handleStart = () => {
     setIsListening(true);
-    vapi.start("0e2cea8c-2315-4c18-8e0f-bcf85f2df271");
+    vapi.start("708057be-3439-4ca7-8fb2-1d27b7e2a13e");
   };
 
   const handleStop = () => {
@@ -18,9 +18,9 @@ const AIAssistant = () => {
 
   return (
     <div className="bg-gray-100 p-4 mb-2 md:m-4 md:py-60 md:min-h-[700px] text-center rounded-lg border-2">
-      <div className='flex justify-center'>
-      <img className="w-8 h-8 rounded-md mx-2" src="https://i.postimg.cc/K8QFJGFw/1705389198122.jpg" alt="logo" /> 
-      <h2 className="text-2xl font-bold mb-5">AI Voice Assistant</h2>
+      <div className='flex justify-center mb-2'>
+        <img className="w-48 h-20 mx-2" src="https://i.postimg.cc/MTXJr6RH/3-Ai-Yyg7-X-400x400-removebg-preview-removebg-preview.jpg" alt="logo" /> 
+        <h2 className="text-2xl font-medium pt-4">AI Voice Assistant</h2>
       </div>
       <button
         onClick={handleStart}

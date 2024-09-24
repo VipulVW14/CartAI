@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CartItem from './CartItem';
-import Vapi from "@vapi-ai/web";
-
-const vapi = new Vapi("28ff6416-7ee9-46a4-9ee9-dfd143722be3");
 
 const Cart = () => {
   const [items, setItems] = useState([]);
-  const apiUrl = 'https://ba35792f-e489-47ea-8048-056691ae22e0-00-37oiiyqiwu46b.picard.replit.dev:5000/api/cart';
+  const apiUrl = 'https://voicedemoapi.soluperts.com/api/cart';
 
   useEffect(() => {
     // Fetch cart items on component mount
@@ -33,39 +30,60 @@ const Cart = () => {
 
   const handleAdd = async (item) => {
     try {
-      await axios.post(`${apiUrl}/add`, {
-        id: item.id,
-        name: item.name,
-        price: item.price,
-        quantity: 1,
-        image: item.image
-      });
+      // Prepare the item to add
+      const itemToAdd = {
+        Id: item.id,
+        Name: item.name,
+        Price: item.price,
+        Quantity: 1, // Assuming you want to add one at a time
+        Image: item.image
+      };
+  
+      await axios.post(`${apiUrl}/add`, { Items: [itemToAdd] }); // Send directly as Items
+  
+      // Refresh cart items after adding
       const response = await axios.get(apiUrl);
       setItems(response.data.items);
     } catch (error) {
       console.error('Error adding item to cart:', error);
     }
   };
-
+  
   const handleRemove = async (item) => {
     try {
-      await axios.post(`${apiUrl}/remove`, { id: item.id });
+      // Prepare the item to remove (decrease quantity)
+      const itemToRemove = {
+        Id: item.id,
+        Quantity: 1 // Decrease quantity by 1
+      };
+  
+      await axios.post(`${apiUrl}/delete`, { Items: [itemToRemove] }); // Send directly as Items
+  
+      // Refresh cart items after removal
       const response = await axios.get(apiUrl);
       setItems(response.data.items);
     } catch (error) {
       console.error('Error removing item from cart:', error);
     }
   };
-
+  
   const handleDelete = async (item) => {
     try {
-      await axios.post(`${apiUrl}/delete`, { id: item.id });
+      // Prepare the item to delete
+      const itemToDelete = {
+        Id: item.id
+      };
+  
+      await axios.post(`${apiUrl}/delete`, { Items: [itemToDelete] }); // Send directly as Items
+  
+      // Refresh cart items after deletion
       const response = await axios.get(apiUrl);
       setItems(response.data.items);
     } catch (error) {
       console.error('Error deleting item from cart:', error);
     }
   };
+  
 
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 

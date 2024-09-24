@@ -8,6 +8,7 @@ const CartItem = ({ item, onAdd, onRemove, onDelete }) => {
       <div className="flex-1 ml-4">
         <h4 className="font-semibold text-lg">{item.name}</h4>
         <p className="text-gray-600">${item.price}</p>
+      <p>{item?.description}</p>
       </div>
       <div className="flex items-center">
         <button 
