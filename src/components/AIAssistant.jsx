@@ -17,23 +17,29 @@ const AIAssistant = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-4 mb-2 md:m-4 md:py-60 md:min-h-[700px] text-center rounded-lg border-2">
-      <div className='flex justify-center mb-2'>
-        <img className="w-48 h-20 mx-2" src="https://i.postimg.cc/MTXJr6RH/3-Ai-Yyg7-X-400x400-removebg-preview-removebg-preview.jpg" alt="logo" /> 
-        <h2 className="text-2xl font-medium pt-4">AI Voice Assistant</h2>
+    <div className="relative p-4 mb-2 md:m-4 md:py-60 md:min-h-[700px] flex justify-center text-center rounded-lg border-2">
+      {/* Pseudo-element for background image */}
+      <div className="absolute inset-0 bg-[url('https://i.postimg.cc/0yRh2nBN/Whats-App-Image-2024-09-24-at-15-53-34.jpg')] opacity-50 bg-cover bg-center z-0"></div>
+
+      {/* Content */}
+      <div className="relative bg-gray-50 p-4 w-fit h-fit rounded-lg">
+        <div className="flex justify-center mb-2">
+          <img className="w-48 h-20 mx-2" src="https://i.postimg.cc/rsrCnKrw/3-Ai-Yyg7-X-400x400-removebg-preview-removebg-preview-Photoroom.png" alt="logo" />
+          <h2 className="text-2xl font-medium pt-4">AI Voice Assistant</h2>
+        </div>
+        <button
+          onClick={handleStart}
+          className={`transition-transform duration-150 ease-in-out ${isListening ? 'bg-green-500' : 'bg-blue-500 hover:bg-blue-600'} text-white text-center px-4 py-2 rounded-lg mr-2`}
+        >
+          {isListening ? 'Listening...' : 'Start'}
+        </button>
+        <button
+          onClick={handleStop}
+          className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg"
+        >
+          Stop
+        </button>
       </div>
-      <button
-        onClick={handleStart}
-        className={`transition-transform duration-150 ease-in-out ${isListening ? 'bg-green-500' : 'bg-blue-500 hover:bg-blue-600'} text-white text-center px-4 py-2 rounded-lg mr-2`}
-      >
-        {isListening ? 'Listening...' : 'Start'}
-      </button>
-      <button
-        onClick={handleStop}
-        className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg"
-      >
-        Stop 
-      </button>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AIAssistant from './components/AIAssistant';
 import Cart from './components/Cart';
-import { toast } from 'react-toastify';
 
 const App = () => {
    useEffect(() => {
