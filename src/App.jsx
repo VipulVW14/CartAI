@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const App = () => {
    useEffect(() => {
     // Open the connection to the SSE endpoint
-    const eventSource = new EventSource('http://localhost:5000/events');
+    const eventSource = new EventSource('https://voicedemoapi.soluperts.com/events');
 
     // Listen for messages from the server
     eventSource.onmessage = (event) => {
