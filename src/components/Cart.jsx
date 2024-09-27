@@ -7,27 +7,26 @@ const Cart = ({ sessionId }) => {
   const apiUrl = 'https://voicedemoapi.soluperts.com/api/cart';
 
   useEffect(() => {
-    // Fetch cart items for the current session
-    const fetchCartItems = async () => {
-      try {
-        const response = await axios.get(`${apiUrl}/${sessionId}`); // Include sessionId in URL
-        setItems(response?.data?.items);
-      } catch (error) {
-        console.error('Error fetching cart items:', error);
-      }
+    const eventSource = new EventSource(`${apiUrl}/sse/${sessionId}`); // Connect to SSE endpoint
+  
+    // Handle incoming messages
+    eventSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      setItems(data.items);
     };
-
-    // Fetch items initially
-    fetchCartItems();
-
-    // Set up polling every 5 seconds
-    const intervalId = setInterval(fetchCartItems, 5000); // Adjusted to 5000 ms for better performance
-
+  
+    // Handle any errors
+    eventSource.onerror = (error) => {
+      console.error('SSE error:', error);
+      eventSource.close(); // Close connection on error
+    };
+  
+    // Clean up the event source on unmount
     return () => {
-      clearInterval(intervalId); // Clean up the interval on unmount
+      eventSource.close();
     };
   }, [sessionId]); // Re-run effect if sessionId changes
-
+  
   const handleAdd = async (item) => {
     try {
       const itemToAdd = {
