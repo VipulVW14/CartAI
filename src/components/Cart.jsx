@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CartItem from './CartItem';
+import config from '../../config';
 
 const Cart = ({ sessionId }) => {
   const [items, setItems] = useState([]);
-  const apiUrl = 'https://voicedemoapi.soluperts.com/api/cart';
+  const apiUrl = config.apiUrl; 
 
   useEffect(() => {
-    const eventSource = new EventSource(`${apiUrl}/sse/${sessionId}`); // Connect to SSE endpoint
+    const eventSource = new EventSource(`${apiUrl}/api/cart/sse/${sessionId}`); 
   
     // Handle incoming messages
     eventSource.onmessage = (event) => {
@@ -80,7 +81,7 @@ const Cart = ({ sessionId }) => {
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="p-4 md:p-4 md:m-4 bg-gray-100 md:min-h-[700px] rounded-lg border-2">
+    <div className="p-4 md:px-6 md:p-4 md:m-4 bg-gray-100 md:min-h-[700px] rounded-lg border-2">
       <h2 className="text-2xl font-semibold mb-6">Your Cart</h2>
       
       {items.length > 0 ? (

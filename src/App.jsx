@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import AIAssistant from './components/AIAssistant';
 import Cart from './components/Cart';
+import config from '../config'; 
 
 const App = () => {
   const [sessionId, setSessionId] = useState(null);
 
   useEffect(() => {
-    const eventSource = new EventSource('https://voicedemoapi.soluperts.com/events');
+    const eventSource = new EventSource(`${config.apiUrl}/events`); // Use config
 
     eventSource.onmessage = (event) => {
       const data = JSON.parse(event.data);
-      // Automatically open the popup with the received URL
       window.open(data.url, '_blank', 'width=800,height=600');
-
-      // Assuming data contains the sessionId
       if (data.sessionId) {
         setSessionId(data.sessionId); // Set sessionId when received
       }
@@ -26,10 +24,10 @@ const App = () => {
   
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 m-4">
-      <div className="">
+      <div>
         <AIAssistant setSessionId={setSessionId} />
       </div>
-      <div className="">
+      <div>
         <Cart sessionId={sessionId} />
       </div>
     </div>
