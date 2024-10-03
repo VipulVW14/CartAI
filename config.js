@@ -1,4 +1,3 @@
-// config.js
 const config = {
     // Titles
     assistantTitle: 'AI Voice Assistant',
