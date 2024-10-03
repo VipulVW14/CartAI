@@ -1,4 +1,4 @@
-# Frontend API Documentation
+# Backend API Documentation
 
 This document outlines the API endpoints and requirements for the frontend application.
 
@@ -12,8 +12,6 @@ This document outlines the API endpoints and requirements for the frontend appli
   - `sessionId`: The ID of the session.
 - **Response:** The cart data for the specified session.
 
----
-
 ### 2. Add Items to Cart
 - **Endpoint:** `/api/cart/add`
 - **Method:** `POST`
@@ -25,8 +23,6 @@ This document outlines the API endpoints and requirements for the frontend appli
       - `id`: The item ID.
       - `quantity`: The quantity of the item to add.
 - **Response:** The updated cart data for the specified session.
-
----
 
 ### 3. Delete or Decrease Quantity of Items from Cart
 - **Endpoint:** `/api/cart/delete`
@@ -40,8 +36,6 @@ This document outlines the API endpoints and requirements for the frontend appli
       - `quantity`: The quantity to delete or a negative number to decrease.
 - **Response:** The updated cart data for the specified session.
 
----
-
 ### 4. Seat Purchase
 - **Endpoint:** `/api/cart/seatPurchase`
 - **Method:** `POST`
@@ -52,8 +46,6 @@ This document outlines the API endpoints and requirements for the frontend appli
   - `description`: The description of the seats.
 - **Response:** The updated cart data for the specified session.
 
----
-
 ### 5. Seat Upgrade
 - **Endpoint:** `/api/cart/seatUpgrade`
 - **Method:** `POST`
@@ -63,8 +55,6 @@ This document outlines the API endpoints and requirements for the frontend appli
   - `quantity`: The number of seats to upgrade.
 - **Response:** The updated cart data for the specified session.
 
----
-
 ### 6. Trigger Web Popup
 - **Endpoint:** `/api/show-web`
 - **Method:** `POST`
@@ -73,15 +63,11 @@ This document outlines the API endpoints and requirements for the frontend appli
   - `url`: The URL to display in the popup.
 - **Response:** A success message.
 
----
-
 ### 7. Set up Server-Sent Events (SSE)
 - **Endpoint:** `/events`
 - **Method:** `GET`
 - **Description:** Sets up Server-Sent Events (SSE) for the application.
 - **Response:** The SSE event stream.
-
----
 
 ## Requirements
 
