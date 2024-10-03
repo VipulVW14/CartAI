@@ -26,13 +26,16 @@ const AIAssistant = ({ setSessionId }) => {
 
   return (
     <div className="relative p-4 md:h-screen md:py-60 md:min-h-[700px] flex justify-center text-center border-2">
-      <div className="absolute inset-0 bg-[url('https://i.postimg.cc/0yRh2nBN/Whats-App-Image-2024-09-24-at-15-53-34.jpg')] opacity-70 bg-cover bg-center z-0"></div>
-      <div className="relative p-4 w-fit h-fit">
+        <div 
+            className="absolute inset-0 bg-cover bg-center z-0" 
+            style={{ backgroundImage: `url(${config.backgroundImg})`, opacity: 0.7 }}
+        ></div>      
+        <div className="relative p-4 w-fit h-fit">
         <div className='absolute inset-0 bg-white opacity-80 z-10 shadow-md rounded-lg border'></div>
         <div className='relative z-20'>
-          <div className="flex justify-center mb-2">
-            <img className="w-48 h-20 mx-2" src="https://i.postimg.cc/rsrCnKrw/3-Ai-Yyg7-X-400x400-removebg-preview-removebg-preview-Photoroom.png" alt="logo" />
-            <h2 className="text-2xl font-medium pt-4">AI Voice Assistant</h2>
+          <div className="flex justify-center mb-2">            
+            <img className="w-48 h-20 mx-2" src={config.companyLogo} alt="logo" />
+            <h2 className="text-2xl font-medium pt-4">{config.assistantTitle}</h2>
           </div>
           <button
             onClick={handleStart}
