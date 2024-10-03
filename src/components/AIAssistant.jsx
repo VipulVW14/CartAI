@@ -25,7 +25,7 @@ const AIAssistant = ({ setSessionId }) => {
   };
 
   return (
-    <div className="relative p-4 mb-2 md:m-4 md:py-60 md:min-h-[700px] flex justify-center text-center rounded-lg border-2">
+    <div className="relative p-4 md:h-screen md:py-60 md:min-h-[700px] flex justify-center text-center border-2">
       <div className="absolute inset-0 bg-[url('https://i.postimg.cc/0yRh2nBN/Whats-App-Image-2024-09-24-at-15-53-34.jpg')] opacity-70 bg-cover bg-center z-0"></div>
       <div className="relative p-4 w-fit h-fit">
         <div className='absolute inset-0 bg-white opacity-80 z-10 shadow-md rounded-lg border'></div>

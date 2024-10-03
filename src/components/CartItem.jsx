@@ -3,7 +3,7 @@ import { AiOutlineDelete } from 'react-icons/ai';
 
 const CartItem = ({ item, onAdd, onRemove, onDelete }) => {
   return (
-    <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md mb-4">
+    <div className="flex items-center justify-between p-4 bg-white border rounded-lg shadow-sm mb-4 mx-2">
       <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-lg" />
       <div className="flex-1 ml-4">
         <h4 className="font-semibold text-lg">{item.name}</h4>
