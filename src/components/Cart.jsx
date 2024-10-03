@@ -81,8 +81,8 @@ const Cart = ({ sessionId }) => {
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="p-4 md:px-6 md:p-4 md:h-screen bg-gray-100 md:min-h-[700px]">
-      <h2 className="text-2xl font-semibold mb-6">Your Cart</h2>
+    <div className="h-screen px-8 py-4 md:px-8 md:p-4 md:h-screen bg-gray-100 md:min-h-[700px]">
+      <h2 className="text-3xl font-sans font-semibold mt-2 mb-6">Your Cart</h2>
       
       <div className='border-2 py-4 px-2 rounded-xl bg-gray-100'>
       {items.length > 0 ? (
